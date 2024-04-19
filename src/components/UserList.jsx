@@ -5,7 +5,7 @@ const UserList = (props) => {
     
     // Get user data... onMount
     useEffect(() => {
-        fetch("http://localhost:9000/users")
+        fetch("https://rendertest-server.onrender.com/users")
         .then(response => response.json())
         .then(usersArray => props.setUsers(usersArray))
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -17,7 +17,7 @@ const UserList = (props) => {
                 <Link to={"/users/" + u.id}>
                     <div className="userContainer" key={u.id}>
                         <h3>{u.username} ({u.email})</h3>
-                        <img src={"http://localhost:9000/" + u.avatarImgSrc} alt={`Avatar of ${u.username}`} width={300} />
+                        <img src={"https://rendertest-server.onrender.com/" + u.avatarImgSrc} alt={`Avatar of ${u.username}`} width={300} />
                     </div>
                 </Link>
                

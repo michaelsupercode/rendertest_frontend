@@ -33,7 +33,7 @@ const JoinFlakebookForm = (props) => {
         formData.append("avatar", avatar, avatar.name);  // Blob = Binary Large Object
         
         
-        fetch("http://localhost:9000/createFlakebookProfile", {
+        fetch("https://rendertest-server.onrender.com/createFlakebookProfile", {
             method: "post",
             body: formData
         }).then((response) => response.json())

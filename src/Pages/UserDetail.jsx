@@ -9,7 +9,7 @@ const UserDetail = () => {
     const [error, setError] = useState("")
 
     useEffect(() => {
-        fetch("http://localhost:9000/users/" + id)
+        fetch("https://rendertest-server.onrender.com/users/" + id)
         .then(response => response.json())
         .then(user => {
             console.log(user)
@@ -27,7 +27,7 @@ const UserDetail = () => {
                 user 
                 ? <div className="userContainer">
                     <h3>{user.username} ({user.email})</h3>
-                    <img src={`http://localhost:9000/${user.avatarImgSrc}`} alt={`Avatar of ${user.username}`} width={500} />
+                    <img src={`https://rendertest-server.onrender.com/${user.avatarImgSrc}`} alt={`Avatar of ${user.username}`} width={500} />
                 </div>
                 : <div className='errorMessage'>
                     {error ? error : "Please click on a user to reach this page."}
